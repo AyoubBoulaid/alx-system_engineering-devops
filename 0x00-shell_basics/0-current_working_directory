@@ -1,4 +1,2 @@
 #!/bin/bash
-
 pwd=$pwd(pwd)
-echo "Print working directory: $pwd"
