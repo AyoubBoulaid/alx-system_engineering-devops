@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Current working directory: $(cd "$(dirname "$0")" && pwd)"
+pwd
