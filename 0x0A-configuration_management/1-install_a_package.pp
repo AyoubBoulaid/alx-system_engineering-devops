@@ -2,24 +2,10 @@ package { 'python3-pip':
   ensure => installed,
 }
 
-exec { 'uninstall_flask_werkzeug':
-  command   => '/usr/bin/pip3 uninstall -y Flask Werkzeug',
+exec { 'install_flask':
+  command   => '/usr/bin/pip3 install Flask==2.1.0',
   path      => ['/bin', '/usr/bin'],
-  onlyif    => '/usr/bin/pip3 show Flask || /usr/bin/pip3 show Werkzeug',
-  logoutput => true,
-}
-
-exec { 'clear_pip_cache':
-  command   => '/usr/bin/pip3 cache purge',
-  path      => ['/bin', '/usr/bin'],
-  require   => Exec['uninstall_flask_werkzeug'],
-  logoutput => true,
-}
-
-exec { 'install_flask_werkzeug':
-  command   => '/usr/bin/pip3 install Flask==2.1.0 Werkzeug==2.0.3',
-  path      => ['/bin', '/usr/bin'],
-  require   => Exec['clear_pip_cache'],
+  unless    => '/usr/bin/pip3 show Flask | grep -q "Version: 2.1.0"',
   logoutput => true,
 }
 
@@ -35,4 +21,3 @@ exec { 'source_profile':
   require   => File['/etc/profile.d/flask_path.sh'],
   logoutput => true,
 }
-
