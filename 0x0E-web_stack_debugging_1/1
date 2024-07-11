@@ -1,2 +1,15 @@
+Hit:1 http://ppa.launchpad.net/vbernat/haproxy-1.8/ubuntu xenial InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Hit:3 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu xenial-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.10.3-0ubuntu0.16.04.5).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
  * Restarting nginx nginx
    ...done.
+Usage: nginx {start|stop|restart|reload|force-reload|status|configtest|rotate|upgrade}
+ * nginx is running
